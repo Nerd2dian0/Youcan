@@ -1,4 +1,4 @@
-/*接口的使用说明*/
+/*接口的使用说明，跟我们所写的程序无关，这里是方便自己理解的如何使用接口的，不参与编译*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
