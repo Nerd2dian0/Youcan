@@ -40,8 +40,8 @@ tNode * pTempNode = Search(pLinkTable);
 printf("%d\n",pTempNode->data);
 debug("DelLinkTableNode\n");
 DelLinkTableNode(pLinkTable,(tLinkTableNode *)pTempNode);
-free(pTempNode);
-DeleteLinkTable(pLinkTable);
+free(pTempNode);/*del只是删除，并没有释放，free后释放*/
+DeleteLinkTable(pLinkTable);/*删除整个链表*/
 
 /*function of Search（）*/
 tNode * Search(tLinkTable *pLinkTable)
@@ -55,7 +55,7 @@ tNode * Search(tLinkTable *pLinkTable)
       return pNode;
     }
     debug("GetNextLinkTableNode\n");
-    pNode = (tNode*)GetNextLinkTableNode(pLinkTable,)
+    pNode = (tNode*)GetNextLinkTableNode(pLinkTable,(tLinkTableNode *)pNode)
   }
   return NULL;
 }
