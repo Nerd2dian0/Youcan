@@ -19,7 +19,7 @@ typedef struct LinkTable
     tLinkTableNode *pHead;/*说明带有头节点的链表*/
     tLinkTableNode *pTail;/*尾节点*/
     int SumOfNode;        /*说明一共有多少的节点*/
-    pthreand_mutex_t mutex;/*多线程，暂时不用管*/
+    pthread_mutex_t mutex;/*多线程，暂时不用管*/
 }tLinkTable;
 
 /*定义的接口:*/
