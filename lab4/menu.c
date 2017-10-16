@@ -52,27 +52,27 @@ int InitMenuData(tLinkTable **ppLinkTable)
     tDataNode* pNode=(tDataNode*)malloc(sizeof(tDataNode));/*malloc一个节点*/
     pNode->cmd="help";
     pNode->desc="Menu List";
-    pNode->handler=help;/*把这个节点的数据放入，以及这个数据的指针*/
+    pNode->handler=Help;/*把这个节点的数据放入，以及这个数据的指针*/
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);/*把上面这个节点添加到这个链表中*/
     pNode=(tDataNode*)malloc(sizeof(tDataNode));
     pNode->cmd="info";
     pNode->desc="Show information";
-    pNode->handler=info;
+    pNode->handler=NULL;
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
     pNode=(tDataNode*)malloc(sizeof(tDataNode));
     pNode->cmd="echo";
     pNode->desc="Repeat your input";
-    pNode->handler=echo;
+    pNode->handler=NULL;
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
     pNode=(tDataNode*)malloc(sizeof(tDataNode));
     pNode->cmd="exit";
     pNode->desc="Exit this program";
-    pNode->handler=Exit;
+    pNode->handler=NULL;
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
     pNode=(tDataNode*)malloc(sizeof(tDataNode));
     pNode->cmd="time";
     pNode->desc="Show time now";
-    pNode->handler=Time;
+    pNode->handler=NULL;
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
 
     return 0;
@@ -93,7 +93,6 @@ int main()
         if(p == NULL)
         {
             printf("Command Not found\n");
-	    coutinue;
         } 
 	printf("%s - s%\n", p->cmd, p->desc);
 	if(p->handler != NULL)
