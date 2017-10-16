@@ -52,7 +52,7 @@ int InitMenuData(tLinkTable **ppLinkTable)
     tDataNode* pNode=(tDataNode*)malloc(sizeof(tDataNode));/*malloc一个节点*/
     pNode->cmd="help";
     pNode->desc="Menu List";
-    pNode->handler=Help;/*把这个节点的数据放入，以及这个数据的指针*/
+    pNode->handler = Help; /*把这个节点的数据放入，以及这个数据的指针*/
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);/*把上面这个节点添加到这个链表中*/
     pNode=(tDataNode*)malloc(sizeof(tDataNode));
     pNode->cmd="info";
