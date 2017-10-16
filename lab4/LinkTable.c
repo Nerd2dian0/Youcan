@@ -31,7 +31,7 @@ int DeleteLinkTable(tLinkTable *pLinkTable)
     pLinkTable->pHead = pLinkTable->pHead->pNext;
     pLinkTable->SumOfNode -= 1;
     pthread_mutex_unlock(&(pLinkTable->mutex));
-    free(p)
+    free(p);
   }
   /*以上的将遍历整个列表*/
   pLinkTable->pHead = NULL;
