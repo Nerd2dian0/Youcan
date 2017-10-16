@@ -94,7 +94,7 @@ int main()
         {
             printf("Command Not found\n");
         } 
-	printf("%s - s%\n", p->cmd, p->desc);
+	printf("%s - %s\n", p->cmd, p->desc);
 	if(p->handler != NULL)
         {
             p->handler();
