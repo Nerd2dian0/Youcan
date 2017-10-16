@@ -41,31 +41,24 @@ int DeleteLinkTable(tLinkTable *pLinkTable)
   return SUCCESS;
 }
 
-int AddLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)
+int AddLinkTableNode(tLinkTable *pLinkTable, tLinkTableNode *pNode)
 {
-  /*错误处理*/
-  if(pLinkTable->pHead == NULL || pNode == NULL)
-  {
-      return FAILURE;
-  }
-  pNode->pNext=NULL;/*把这个节点的Next置为NULL*/
-  pthread_mutex_lock(&(pLinkTable->mutex));
-  if(pLinkTable->pHead == NULL)
-  {
-    pLinkTable->pHead = pNode;/*此时该节点是头结点还是尾节点*/
-  }
-  if(pLinkTable->pTail == NULL)
-  {
-    pLinkTable->pTail == pNode;
-  }
-  else
-  {
-    pLinkTable->pTail->pNext = pNode;
-    pLinkTable->pTail = pNode;
-  }
-  pLinkTable->SumOfNode += 1;
-  pthread_mutex_unlock(&(pLinkTable->mutex));
-  return SUCCESS;
+    if (pLinkTable == NULL || pNode == NULL)
+        return FAILURE;
+
+    if (pLinkTable->pHead == NULL)
+    {
+        pLinkTable->pHead = pNode;
+        pLinkTable->pTail = pNode;
+        pLinkTable->SumOfNode = 1;
+    }
+    else
+    {
+        pLinkTable->pTail->pNext = pNode;
+        pLinkTable->pTail = pNode;
+        pLinkTable->SumOfNode++;
+    }
+    return SUCCESS;
 }
 
 int DeleteLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)
