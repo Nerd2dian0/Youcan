@@ -32,9 +32,9 @@ int AddLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode);
   /*delete a LinkTableNode to LinkTable生死相依*/
 int DeleteLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode);
   /*get LinkTableHead该接口是获得头结点*/
-tLinkTableNode * GetLinkTableHead(tLinkTable *pLinkTable)；
+tLinkTableNode * GetLinkTableHead(tLinkTable *pLinkTable);
   /* get next LinkTableNode根据一个节点执行这个节点的下一个节点，可以一直下去，实现用户的遍历*/
-tLinkTableNode * GetNextLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)；
+tLinkTableNode * GetNextLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode);
 
 #endif
 /*结束了_LINK_TABLE_H_*/
