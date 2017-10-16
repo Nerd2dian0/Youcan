@@ -10,7 +10,6 @@ tLinkTable * CreateLinkTable()
   {
     return NULL;
   }
-  tLinkTable *pLinkTable = (tLinkTable*)malloc(sizeof(tLinkTable));
   pLinkTable->pHead = NULL;
   pLinkTable->pTail = NULL;
   pLinkTable->SumOfNode = 0;
