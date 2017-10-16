@@ -81,12 +81,12 @@ int InitMenuData(tLinkTable **ppLinkTable)
 tLinkTable* head=NULL;
 int main()
 {
-    char cmd[CMD_MAX_LEN];
     InitMenuData(&head);
-    tLinkTableNode *command;
+    
     printf("Program is running\n");
     while (1)
     {
+	char cmd[CMD_MAX_LEN];
         printf("Input a cmd >>");
         scanf("%s",cmd);
         tDataNode *p = FindCmd(head,cmd);
