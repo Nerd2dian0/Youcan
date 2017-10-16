@@ -16,7 +16,7 @@ typedef struct DataNode
     tLinkTableNode *pNext;
     char* cmd;
     char* desc;
-    void   (*handler)();
+    int   (*handler)();
 }tDataNode;
 
 /*find a cmd in the linkTable and return the data*/
