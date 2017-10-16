@@ -25,7 +25,7 @@ tDataNode *FindCmd(tLinkTable *head, char *cmd)
     tDataNode* pNode=(tDataNode*)GetLinkTableHead(head);
     while(pNode !=NULL)
     {
-        if(!strcmp(pNode->cmd,cmd))
+        if(strcmp(pNode->cmd,cmd) == 0)
         {
             return pNode;
         }
