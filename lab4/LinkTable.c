@@ -5,11 +5,12 @@
 
 tLinkTable * CreateLinkTable()
 {
+  tLinkTable *pLinkTable = (tLinkTable*)malloc(sizeof(tLinkTable));
   if(pLinkTable == NULL)
   {
     return NULL;
   }
-  tLinkTable *pLinkTable = (tLinkTable*)malloc(sizeof(tLinkTable))；
+  tLinkTable *pLinkTable = (tLinkTable*)malloc(sizeof(tLinkTable));
   pLinkTable->pHead = NULL;
   pLinkTable->pTail = NULL;
   pLinkTable->SumOfNode = 0;
@@ -65,7 +66,7 @@ int AddLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)
   }
   pLinkTable->SumOfNode += 1;
   pthread_mutex_unlock(&(pLinkTable->mutex));
-  return SUCCESS；
+  return SUCCESS;
 }
 
 int DeleteLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)
