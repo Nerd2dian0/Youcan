@@ -27,7 +27,7 @@ typedef struct LinkTable
 tLinkTable * CreateLinkTable();
   /*delete a LinkTable，链表的生死相依原则*/
 int DeleteLinkTable(tLinkTable *pLinkTable);
-  /*add a LinkTableNode to LinkTable括号内tLinkTable *pLinkTable是链表的头，tLinkTableNode * pNode是将一个新的节点的指针插入这个链表*/
+  /*add a LinkTableNode to LinkTable*/
 int AddLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode);
   /*delete a LinkTableNode to LinkTable生死相依*/
 int DeleteLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode);
