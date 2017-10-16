@@ -104,6 +104,6 @@ int main()
 
 int Help()
 {
-    ShowAllCmd(head);
+    ShowAllCMD(head);
     return 0; 
 }
