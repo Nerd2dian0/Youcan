@@ -65,9 +65,9 @@ int InitMenuData(tLinkTable **ppLinkTable)
     pNode->handler=NULL;
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
     pNode=(tDataNode*)malloc(sizeof(tDataNode));
-    pNode->cmd="exit";
+    pNode->cmd="quit";
     pNode->desc="Exit this program";
-    pNode->handler=NULL;
+    pNode->handler=Quit;
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
     pNode=(tDataNode*)malloc(sizeof(tDataNode));
     pNode->cmd="time";
@@ -106,4 +106,8 @@ int Help()
 {
     ShowAllCMD(head);
     return 0; 
+}
+int Quit()
+{
+    exit(0);
 }
