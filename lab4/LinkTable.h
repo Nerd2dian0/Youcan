@@ -7,13 +7,13 @@
 #define SUCCESS 0
 #define FAILURE (-1)
 
-/*链表Node类型*/
+/*链表节点类型*/
 typedef struct LinkTableNode
 {
    struct LinkTableNode * pNext;
 }tLinkTableNode;
 
-/*LinkTable Type*/
+/*链表结构LinkTable Type*/
 typedef struct LinkTable
 {
     tLinkTableNode *pHead;/*说明带有头节点的链表*/
