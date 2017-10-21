@@ -7,6 +7,8 @@
 #define SUCCESS 0
 #define FAILURE (-1)
 
+typedef struct LinkTableNode tLinkTableNode;
+typedef struct LinkTable tLinkTable;
 /*定义的接口:*/
   /*创建一个LinkTable,返回链表的头结点,下面接口中的头结点都是为了确定是该链表而不是其他*/
 tLinkTable * CreateLinkTable();
