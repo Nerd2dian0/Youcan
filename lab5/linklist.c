@@ -115,6 +115,24 @@ int DeleteLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode)
   return FAILURE;
 }
 
+tLinkTableNode *SearchLinkTableNode(tLinkTable *pLinkTable,int Condition(tLinkTableNode * pNode, void * args),void *args)
+{
+    if(pLinkTable == NULL)
+    {
+        return NULL;
+    }
+    tLinkTableNode *tmp = pLinkTable->pHead;
+    while(tmp != NULL)
+    {
+        if(Condition(tmp,args) == 1)
+        {
+            return tmp;
+        }
+        tmp = tmp->pNext;
+    }
+    return NULL;
+}
+
 tLinkTableNode * GetLinkTableHead(tLinkTable *pLinkTable)
 {
  if(pLinkTable == NULL)
