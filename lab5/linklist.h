@@ -17,7 +17,7 @@ int AddLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode);
   /*delete a LinkTableNode to LinkTable生死相依*/
 int DeleteLinkTableNode(tLinkTable *pLinkTable,tLinkTableNode * pNode);
 /*查找一个cmd*/
-tLinkListNode *SearchLinkListNode(tLinkList *pLinkList,int Condition(tLinkListNode * pNode, void * args),void *args);
+tLinkTableNode *SearchLinkTableNode(tLinkTable *pLinkTable,int Condition(tLinkTableNode * pNode, void * args),void *args);
   /*get LinkTableHead该接口是获得头结点*/
 tLinkTableNode * GetLinkTableHead(tLinkTable *pLinkTable);
   /* get next LinkTableNode根据一个节点执行这个节点的下一个节点，可以一直下去，实现用户的遍历*/
