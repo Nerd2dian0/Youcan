@@ -20,18 +20,14 @@ typedef struct DataNode
 }tDataNode;
 
 /*find a cmd in the linkTable and return the data*/
+int SearchCondition(tLinkTableNode * pNode, void * args)
+{
+    return (strcmp(((tDataNode*)pNode)->cmd,(char*)args)?0:1);
+}
+
 tDataNode *FindCmd(tLinkTable *head, char *cmd)
 {
-    tDataNode* pNode=(tDataNode*)GetLinkTableHead(head);
-    while(pNode !=NULL)
-    {
-        if(strcmp(pNode->cmd,cmd) == 0)
-        {
-            return pNode;
-        }
-        pNode=(tDataNode*)GetNextLinkTableNode(head,(tLinkTableNode*)pNode);
-    }
-    return NULL;
+    return (tDataNode*)SearchLinkTableNode(head,SearchCondition,cmd);
 }
 /*show all cmd in listtable*/
 int ShowAllCMD(tLinkTable* head)
