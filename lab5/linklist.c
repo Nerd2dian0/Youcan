@@ -3,6 +3,21 @@
 #include<stdlib.h>
 #include "LinkTable.h"
 
+/*链表节点类型*/
+typedef struct LinkTableNode
+{
+   struct LinkTableNode * pNext;
+}tLinkTableNode;
+
+/*链表结构LinkTable Type*/
+typedef struct LinkTable
+{
+    tLinkTableNode *pHead;/*说明带有头节点的链表*/
+    tLinkTableNode *pTail;/*尾节点*/
+    int SumOfNode;        /*说明一共有多少的节点*/
+    pthread_mutex_t mutex;/*多线程，暂时不用管*/
+}tLinkTable;
+
 tLinkTable * CreateLinkTable()
 {
   tLinkTable *pLinkTable = (tLinkTable*)malloc(sizeof(tLinkTable));
