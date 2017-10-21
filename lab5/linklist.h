@@ -7,21 +7,6 @@
 #define SUCCESS 0
 #define FAILURE (-1)
 
-/*链表节点类型*/
-typedef struct LinkTableNode
-{
-   struct LinkTableNode * pNext;
-}tLinkTableNode;
-
-/*链表结构LinkTable Type*/
-typedef struct LinkTable
-{
-    tLinkTableNode *pHead;/*说明带有头节点的链表*/
-    tLinkTableNode *pTail;/*尾节点*/
-    int SumOfNode;        /*说明一共有多少的节点*/
-    pthread_mutex_t mutex;/*多线程，暂时不用管*/
-}tLinkTable;
-
 /*定义的接口:*/
   /*创建一个LinkTable,返回链表的头结点,下面接口中的头结点都是为了确定是该链表而不是其他*/
 tLinkTable * CreateLinkTable();
