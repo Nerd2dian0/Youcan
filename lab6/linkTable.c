@@ -1,7 +1,7 @@
 /*LinkTable.c是接口的源代码*/
 #include<stdio.h>
 #include<stdlib.h>
-#include "LinkTable.h"
+#include "linkTable.h"
 
 /*链表节点类型*/
 typedef struct LinkTableNode
