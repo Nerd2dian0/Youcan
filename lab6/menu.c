@@ -6,8 +6,8 @@
 #include "menu.h"
 
 tLinkTable* head=NULL;
-int Help();
-int Quit();
+int Help(int argc, char** argv);
+int Quit(int argc, char** argv);
 
 #define CMD_MAX_LEN 128
 #define DESC_LEN    1024
@@ -21,7 +21,7 @@ typedef struct DataNode
     tLinkTableNode *pNext;
     char* cmd;
     char* desc;
-    int   (*handler)();
+    int   (*handler)(int argc, char** argv);
 }tDataNode;
 
 /*find a cmd in the linkTable and return the data*/
@@ -140,12 +140,12 @@ int ExecuteMenu()
     return 0;
 }
 
-int Help()
+int Help(int argc, char* argv[])
 {
     ShowAllCMD(head);
     return 0; 
 }
-int Quit()
+int Quit(int argc, char* argv[])
 {
     exit(0);
 }
