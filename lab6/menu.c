@@ -76,8 +76,7 @@ int ShowAllCMD(tLinkTable* head)
     AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
 
     return 0;
-}
-*/
+}*/
 //tLinkTable* head=NULL;
 int MenuConfig(char *cmd, char *desc, void (*handler)(int argc, char *argv[]))
 {
@@ -144,7 +143,6 @@ int ExecuteMenu()
 
 int main()
 {
-    InitMenuData(&head);
     ExecuteMenu();
 
 	printf("%s - %s\n", p->cmd, p->desc);
