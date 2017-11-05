@@ -5,6 +5,7 @@
 #include "linkTable.h"
 #include "menu.h"
 
+tLinkTable* head=NULL;
 int Help();
 int Quit();
 
@@ -77,7 +78,7 @@ int ShowAllCMD(tLinkTable* head)
 
     return 0;
 }*/
-//tLinkTable* head=NULL;
+
 int MenuConfig(char *cmd, char *desc, void (*handler)(int argc, char *argv[]))
 {
     if(head == NULL)
@@ -99,58 +100,44 @@ int MenuConfig(char *cmd, char *desc, void (*handler)(int argc, char *argv[]))
 
 int ExecuteMenu()
 {
-    int argc = 0;
-    char cmd[CMD_MAX_LEN];
-    char *argv[CMD_MAX_ARGV_NUM];
-    char *command = NULL;
-    MenuConfig("info","Show information\n\t'-Nerd2dian0' for author information\n\t'-version1.10' for version information",NULL);
-    MenuConfig("echo","Repeat your input",NULL);
-    MenuConfig("quit","Exit this program",Quit);
-    MenuConfig("time","Show time now",NULL);
-    printf("Program is running\n");
-    while (1)
+    while(1)
     {
-        argc = 0;
-        command = NULL;
-        printf("Command>>");
-        command=fgets(cmd,CMD_MAX_LEN,stdin);
-        if (command == NULL)
+	int argc = 0;
+	char *argv[CMD_MAX_ARGV_NUM];
+        char cmd[CMD_MAX_LEN];
+        char *pcmd = NULL;
+        printf("Input a cmd number > ");
+        /*scanf("%s", cmd);*/
+        pcmd = fgets(cmd, CMD_MAX_LEN, stdin);
+        if(pcmd == NULL)
         {
             continue;
         }
-        command = strtok(command," ");
-        while (command != NULL && argc < CMD_MAX_ARGV_NUM)
+        /* convert cmd to argc/argv */
+        pcmd = strtok(pcmd, " ");
+        while(pcmd != NULL && argc < CMD_MAX_ARGV_NUM)
         {
-            argv[argc] = command;
+            argv[argc] = pcmd;
             argc++;
-            command = strtok(NULL," ");
+            pcmd = strtok(NULL, " ");
         }
         if(argc == 1)
         {
             int len = strlen(argv[0]);
-            *(argv[0] + len -1) = '\0';
+            *(argv[0] + len - 1) = '\0';
         }
-        tDataNode *p = FindCmd(head,argv[0]);
+        tDataNode *p = (tDataNode*)SearchLinkTableNode(head, SearchCondition, (void*)argv[0]);
         if(p == NULL)
         {
-            printf("Command Not found\n");
-        } else if(p->handler!= NULL)
+            printf("This is a wrong cmd!\n");
+            continue;
+        }
+        if(p->handler != NULL)
         {
-            p->handler(argc,argv);
+            p->handler(argc, argv);
         }
     }
-}
-
-int main()
-{
-    ExecuteMenu();
-
-	printf("%s - %s\n", p->cmd, p->desc);
-	if(p->handler != NULL)
-        {
-            p->handler();
-        }
-    }
+    return 0;
 }
 
 int Help()
