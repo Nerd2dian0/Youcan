@@ -83,18 +83,18 @@ int MenuConfig(char *cmd, char *desc, void (*handler)(int argc, char *argv[]))
 {
     if(head == NULL)
     {
-        head = CreateLinkList();
+        head = CreateLinkTable();
         tDataNode *pNode = (tDataNode*) malloc(sizeof(tDataNode));
         pNode->cmd = "help";
         pNode->desc = "List all command in this program";
         pNode->handler = help;
-        AddLinkListNode(head,(tLinkListNode *)pNode);
+        AddLinkTableNode(head,(tLinkTableNode *)pNode);
     }
     tDataNode* pNode=(tDataNode*)malloc(sizeof(tDataNode));
     pNode->cmd=cmd;
     pNode->desc=desc;
     pNode->handler=handler;
-    AddLinkListNode(head,(tLinkListNode *)pNode);
+    AddLinkTableNode(head,(tLinkTableNode *)pNode);
     return 0;
 }
 
