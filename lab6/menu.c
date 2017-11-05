@@ -12,6 +12,7 @@ int Quit(int argc, char** argv);
 #define CMD_MAX_LEN 128
 #define DESC_LEN    1024
 #define CMD_NUM     10
+#define CMD_MAX_ARGV_NUM 128
 
 /* menu program */
 
@@ -56,7 +57,7 @@ int MenuConfig(char *cmd, char *desc, void (*handler)(int argc, char *argv[]))
         tDataNode *pNode = (tDataNode*) malloc(sizeof(tDataNode));
         pNode->cmd = "help";
         pNode->desc = "List all command in this program";
-        pNode->handler = help;
+        pNode->handler = Help;
         AddLinkTableNode(head,(tLinkTableNode *)pNode);
     }
     tDataNode* pNode=(tDataNode*)malloc(sizeof(tDataNode));
