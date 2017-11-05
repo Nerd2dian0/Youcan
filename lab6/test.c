@@ -21,6 +21,17 @@ int Info(int argc, char** argv)
     }
    return 0;
 }
+int Echo(int argc, char** argv)\
+{
+    printf("Repeat your input.\n");
+    return 0;
+}
+int Time(int argc, char** argv)
+{
+    printf("Show time now.\n");
+    return 0;
+}
+
 
 int main(int argc, char** argv)
 {
@@ -30,8 +41,8 @@ int main(int argc, char** argv)
     MenuConfig("help", "This is help cmd", Help);
     MenuConfig("quit", "Quit the program", Quit);
     MenuConfig("info", "Show information", Info);
-    MenuConfig("echo", "Repeat your input", NULL);
-    MenuConfig("time", "Show time now", NULL);
+    MenuConfig("echo", "Repeat your input", Echo);
+    MenuConfig("time", "Show time now", Time);
     ExecuteMenu();
     return 0;
 }
