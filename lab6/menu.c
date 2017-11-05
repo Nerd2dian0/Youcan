@@ -46,38 +46,7 @@ int ShowAllCMD(tLinkTable* head)
     return 0;
 }
 
-/*初始化*/
-/*int InitMenuData(tLinkTable **ppLinkTable)
-{
-    *ppLinkTable=CreateLinkTable();/*创建一个链表*/
-    tDataNode* pNode=(tDataNode*)malloc(sizeof(tDataNode));/*malloc一个节点*/
-    pNode->cmd="help";
-    pNode->desc="Menu List";
-    pNode->handler = Help; /*把这个节点的数据放入，以及这个数据的指针*/
-    AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);/*把上面这个节点添加到这个链表中*/
-    pNode=(tDataNode*)malloc(sizeof(tDataNode));
-    pNode->cmd="info";
-    pNode->desc="Show information";
-    pNode->handler=NULL;
-    AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
-    pNode=(tDataNode*)malloc(sizeof(tDataNode));
-    pNode->cmd="echo";
-    pNode->desc="Repeat your input";
-    pNode->handler=NULL;
-    AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
-    pNode=(tDataNode*)malloc(sizeof(tDataNode));
-    pNode->cmd="quit";
-    pNode->desc="Exit this program";
-    pNode->handler=Quit;
-    AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
-    pNode=(tDataNode*)malloc(sizeof(tDataNode));
-    pNode->cmd="time";
-    pNode->desc="Show time now";
-    pNode->handler=NULL;
-    AddLinkTableNode(*ppLinkTable,(tLinkTableNode *)pNode);
 
-    return 0;
-}*/
 
 int MenuConfig(char *cmd, char *desc, void (*handler)(int argc, char *argv[]))
 {
