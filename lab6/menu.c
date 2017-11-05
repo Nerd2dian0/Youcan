@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linkTable.h"
+#include "menu.h"
+
 int Help();
 int Quit();
 
