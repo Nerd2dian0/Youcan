@@ -19,6 +19,7 @@ int Info(int argc, char** argv)
                 break;
         }
     }
+   optind = 0;	
    return 0;
 }
 int Echo(int argc, char** argv)\
