@@ -19,7 +19,7 @@ int Info(int argc, char** argv)
                 break;
         }
     }
-   optind = 0;	
+   optind = 0;	//如果没有这句，循环不在有用。
    return 0;
 }
 int Echo(int argc, char** argv)\
