@@ -10,7 +10,9 @@ int main(int argc, char** argv)
     int (*handler)();*/
     MenuConfig("help", "This is help cmd", Help);
     MenuConfig("quit", "Quit the program", Quit);
-    MenuConfig("hello", "This is a test cmd", Hello);
+    MenuConfig("info", "Show information", NULL);
+    MenuConfig("echo", "Repeat your input", NULL);
+    MenuConfig("time", "Show time now", NULL);
     ExecuteMenu();
     return 0;
 }
