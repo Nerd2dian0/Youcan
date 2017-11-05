@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "LinkTable.h"
+#include "linkTable.h"
 int Help();
 int Quit();
 
